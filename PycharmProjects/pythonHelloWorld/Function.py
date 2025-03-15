@@ -22,8 +22,9 @@ print(len(hellow_fun1())) #Return length
 
 print(hellow_argument('vikash'))
 
-#
-def student_Info(*args, **kwargs):
+#*args allows a function to accept any number of positional arguments as a tuple.
+#**kwargs allows a function to accept any number of keyword arguments as a dictionary.
+def student_info(*args, **kwargs):    # *args and **kwargs are used to handle a variable number of arguments in a function.
     print(args)
     print(kwargs)
 
@@ -34,7 +35,7 @@ courses=['Maths', 'Art']
 info={'name': 'vikash', 'age':25}
 
 
-#print(student_Info('vikas', 'kumar', name='Raj', age=26))
-#print(student_Info(courses, info))
-print(student_Info(*courses, **info))
+#print(student_info('vikas', 'kumar', name='Raj', age=26))
+#print(student_info(courses, info))
+print(student_info(*courses, **info))
 

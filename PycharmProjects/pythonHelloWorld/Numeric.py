@@ -17,11 +17,11 @@ print(str_joined)
 
 #str_joined.split('')
 
-print(len(courses))
-print(courses[0])
-print(courses[-1])
-print(courses[0:4])
-print(courses[:3])
+# print(len(courses))
+# print(courses[0])
+# print(courses[-1])
+# print(courses[0:4])
+# print(courses[:3])
 
 #Note extend vs append
 courses.append(courses_extra)
