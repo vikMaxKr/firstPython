@@ -1,6 +1,5 @@
 #Numpy most useful feature is n dimentional array object aka ndarray
 import sys
-
 import numpy as np
 from pandas import PeriodIndex
 
@@ -9,15 +8,17 @@ from pandas import PeriodIndex
 # 2. Fast
 # 3. convenient
 
-a=np.array([1,2,3])
-
-python_arr=range(1000)
-npy_arr=np.arange(1000)
-
-print(sys.getsizeof(5)*len(python_arr))       # size of each element is 14bytes
-print(npy_arr.size*npy_arr.itemsize)          #size of each element is 4 byte
+# a=np.array([1,2,3])
+#
+# python_arr=range(1000)
+# npy_arr=np.arange(1000)
+#
+# print(sys.getsizeof(5)*len(python_arr))       # size of each element is 14bytes
+# print(npy_arr.size*npy_arr.itemsize)          #size of each element is 4 byte
 
 ###################################
+
+###   1-D array #######
 # n1=np.array([1,2,3,4])
 # n2=np.array([9,8,7,2])
 #
@@ -41,7 +42,7 @@ print(npy_arr.size*npy_arr.itemsize)          #size of each element is 4 byte
 #
 # print(n12.dtype)
 # print(n12.shape)
-#
+
 # print(np.ones((3,4)))
 #
 # print(np.arange(0,4))
@@ -78,12 +79,12 @@ print(npy_arr.size*npy_arr.itemsize)          #size of each element is 4 byte
 ###### Indexing and slicing
 
 sl=np.array([1,2,3,4,5])
-print(sl[1:])
-print(sl[-1:])
+print(sl[1:4])   # 1:4 means selecting elements from index 1 (inclusive) to index 4 (exclusive).
+print(sl[-1:])  # start from given index from end till end
 
 sl2=np.array([[1,2,3],[4,5,6],[7,8,9]])
-print(sl2[0:2,2])
-print(sl2[-1,0:2])
+print(sl2[0:2,2])        #  0:2 → Selects rows 0 and 1 (excluding row index 2).  2 → Selects column index 2 (the third column).
+print(sl2[-1, 0:2])
 print(sl2[:])        #all elements
 print(sl2[:3])     # all elements below index 3
 
@@ -171,5 +172,52 @@ a=np.ones((2,2))
 
 print(a)
 
+
+
+#-------
+horse_power= [12, 13, 14, 56, 150, 160]
+
+np_hp=np.array(horse_power)
+
+x=np.where(np_hp> 150)
+
+print(x) # gives index
+print(np_hp[x]) # return value
+
+np.sort(np_hp) # original array remains same
+
+np_hp.sort() # also change the original array
+
+# Line space
+# Linespace returns the given number of evenly spaced values, between the given intervals.
+# By default the number of values a given interval is 50
+
+arr=np.linspace(0, 10)
+#print(arr)
+print(len(arr))
+
+print(np.linspace(0, 10, 15))
+
+print(np.ones([2,3]))
+
+# return array of given shape, filled with given value, irrespective of datatype
+
+np.full(5, 8)
+
+print(np.full([2,3],'vikas'))
+
+print(np.eye(4))  # returns an identity matrix for the given shape
+
+
+# random
+
+print(np.random.randint(1, 10, size=10))
+print(np.random.randint(100, size=(3, 5)))  # random values of high 100, of shape (3,5)
+
+#returns a single random value from the array
+print(np.random.choice([1,4,5,6,3,2,7,8,9]))
+
+# returns 3*5 random values from the array
+print(np.random.choice([9,2,4,5,6,7,8], size=(3,5)))
 
 

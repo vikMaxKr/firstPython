@@ -8,7 +8,7 @@ from tkinter.font import names
 #G- global
 #B- Built-in
 
-#x='global x'
+x='global x'
 
 def fun(z):
     y='local y'
@@ -18,14 +18,14 @@ def fun(z):
     print(z)
 
 fun('local z')
-#print(x)
+print(x)
 
 #####  Built-in
 
 m=min([1,2,3,4])
 print(m)
 
-#print(dir(builtins))
+print(dir(builtins))
 
 #Note if any method defined here(global method) in class is similar to built-in methods python going to execute
 #first global method then built-in
@@ -41,12 +41,11 @@ def outer():
         print(x)
     inner()
     print(x)
-
 outer()
 
-class Employee():
+class Employee:
 
-    def __init__(self,name, age, salary):
+    def __init__(self, name, age, salary):
         self.name=name
         self.age=age
         self.salary=salary
@@ -59,10 +58,9 @@ e2=Employee('Atul',23, 4000)
 e3=Employee('Raj', 45, 344556)
 
 employees=[e1,e2,e3]
-
 def fun(emp):
     return emp.name
 
-sortd_emp=sorted(employees,key=fun,reverse=True)
+sortd_emp=sorted(employees, key=fun, reverse=True)
 print(sortd_emp)
 

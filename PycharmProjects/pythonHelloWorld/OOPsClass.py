@@ -6,24 +6,25 @@ class Employee:
     raise_amount=1.04
     no_of_employees=0
 
-    def __init__(self,first_name, last, email):
+    def __init__(self, first_name, last, email):      #constructor
         self.first_name=first_name
         self.last=last
         self.email=email
         Employee.no_of_employees+=1
 
     def full_name(self):
-        return self.first_name+self.last
+        return self.first_name + self.last
+
     def increment(self):
         return self.raise_amount   #or Employee.raise_amount
 
-    @classmethod                   #class method
+    @classmethod                   #A class method receives the class as implicit first argument, just like an instance method receives the instance.
     def cla_method(cls, amount):
         cls.raise_amount=amount
 
     @classmethod
-    def from_string(cls,str):
-        f_name, l_name, email=str.split('-')
+    def from_string(cls, str):
+        f_name, l_name, email = str.split('-')
         return cls(f_name,l_name,email)
 
     @staticmethod
@@ -34,12 +35,9 @@ class Employee:
 class Developer(Employee):  #Inherit Employee
       raise_amount = 2.00
 
-      def __init__(self,first_name, last, email, prog_lang):
+      def __init__(self, first_name, last, email, prog_lang):
           super().__init__(first_name,last,email)
           self.prog_lang=prog_lang
-
-
-
 
 dev1=Developer.raise_amount
 devlop1=Developer('vik','kr', 'aa@gmail.com', 'python')
@@ -51,8 +49,6 @@ print(devlop1.prog_lang)
 print(isinstance(devlop1, Employee))
 
 print(issubclass(Developer, Employee))
-
-
 e1=Employee('vik','kr','vik@gmail.com')
 e2=Employee('Atul','kr','atul@gmail.com')
 

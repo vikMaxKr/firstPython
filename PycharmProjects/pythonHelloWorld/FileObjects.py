@@ -1,28 +1,30 @@
 
 file=open('file.txt', 'r')  #default file to read
-print(file)
-print(file.mode)            #return different mode file is in like r=read, w=write
-file.close()                #close file after open always!
+# print(file)
+# print(file.mode)            #return different mode file is in like r=read, w=write
+# file.close()                #close file after open always!
 
 #using context manager
 
 with open('file.txt','r') as f:   #It automatically closes file even in exception scenario
-    #print(f)
     # for line in f:
-    #     print(line)
-    # read_contents=f.read(20)    #read only first 20 char
-    # read_lines=f.readlines()
-    # read_line=f.readline()
+    #      print(line)
+    # read_contents=f.read(10)    #read only first 10 char
     # print(read_contents)
+    # read_line = f.readline()  # read first line
+    # read_lines=f.readlines()  # read remaining
+    # for ln in read_lines:
+    #     print('line read '+ln)
 
-    # chunk_size=10
-    # f_contents=f.read(chunk_size)
-    # print(f.tell())                  #return current position in file
-    # print(type(f_contents))
+
+    chunk_size=10
+    f_contents=f.read(chunk_size)
+    print(f.tell())                  #return current position in file
+    print(type(f_contents))
     #
-    # while len(f_contents) > 0:
-    #     print(f_contents, end='*')
-    #     f_contents = f.read(chunk_size)
+    while len(f_contents) > 0:
+        print(f_contents, end='*')
+        f_contents = f.read(chunk_size)
 
     chunk_size = 10
     f_contents = f.read(chunk_size)

@@ -14,7 +14,7 @@ print(message+' '+message1)                        #concatenate
 
 #Note concat with + is costly operation
 
-msg='{},{}'.format(message,message1)
+msg='{} {} {}'.format(message,message1, 'vikash')
 print('message '+msg)
 
 print(dir(msg))   #gives all attributes, methods available on this msg

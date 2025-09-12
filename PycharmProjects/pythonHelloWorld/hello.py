@@ -33,9 +33,10 @@ print(char_check[0:3])
 
 name = "Mosh"
 message = f"Hi, my name is {name}"
+ghar=f"my ghar is {name}"
 print(message)
 
-is_contain='vikasha' in char_check;
+is_contain='vikasha' in char_check
 print(is_contain)
 
 #Arithmetic

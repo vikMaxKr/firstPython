@@ -1,6 +1,6 @@
 class Employee:
 
-    def __init__(self,name,address,pay):
+    def __init__(self,name,address,pay):  #constructor
         self.name=name
         self.address=address
         self.pay=pay
@@ -17,9 +17,6 @@ class Employee:
 
 emp1=Employee('vikash', '123 Dawning Street',3000)
 emp2=Employee('vik', '12344 Dawning Street',6000)
-
 print(emp2+emp1)
-
 print('test'.__len__())
-
 print(emp1)

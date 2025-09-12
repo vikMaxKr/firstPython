@@ -1,26 +1,25 @@
 import os
 import  csv
-from opcode import opname
+#from opcode import opname
 
-from OperatingSystem import new_path
+#from OperatingSystem import new_path
 
-os.chdir('/Users/vikashkumar/PycharmProjects/pythonHelloWorld/filesSort')
+os.chdir('/Users/vikashkumar/Git-Projects/firstPython/PycharmProjects/pythonHelloWorld/filesSort')
 
 curr_dir=os.curdir
-
 # for f in os.listdir():
 #     print(f)
 
-# for f in os.listdir():
-#    file_name,file_ext=os.path.splitext(f)
-#    course=file_name.split(' ')
-#    f_num=course[2].strip()[1:].zfill(2)
-#    f_owner=course[0].strip()
-#    f_file=course[1].strip()
-#    new_name='{}-{}{}{}'.format(f_num,f_owner,f_file,file_ext)
-#    print(new_name)
-#    #print({file_owner})
-#    os.rename(f, new_name)
+for f in os.listdir():
+   file_name,file_ext=os.path.splitext(f)
+   course=file_name.split(' ')
+   f_num=course[2].strip()[1:].zfill(2)
+   f_owner=course[0].strip()
+   f_file=course[1].strip()
+   new_name='{}-{}{}{}'.format(f_num,f_owner,f_file,file_ext)
+   print(new_name)
+   #print({file_owner})
+   os.rename(f, new_name)
 
 #print(curr_dir)
 
@@ -54,13 +53,13 @@ curr_dir=os.curdir
 #     for line in dic_read:
 #         print(line['email'])              #we can access by heading
 
-with open('first.csv','r') as csv_file:
-   csv_reader=csv.reader(csv_file)
-
-   with open('writer.csv','w') as csv_writer:
-       fields_name = ['first_name', 'last_name', 'email']
-       new_file=csv.DictWriter(csv_writer,fieldnames=fields_name,delimiter=',')
-       new_file.writeheader()
-       for line in csv_reader:
-         new_file.writerow(line)
+# with open('first.csv','r') as csv_file:
+#    csv_reader=csv.reader(csv_file)
+#
+#    with open('writer.csv','w') as csv_writer:
+#        fields_name = ['first_name', 'last_name', 'email']
+#        new_file=csv.DictWriter(csv_writer,fieldnames=fields_name,delimiter=',')
+#        new_file.writeheader()
+#        for line in csv_reader:
+#          new_file.writerow(line)
 
